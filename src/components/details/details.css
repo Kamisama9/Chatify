@@ -87,11 +87,15 @@
         cursor: pointer;
 
         &:hover{
-            background-color: rgba(230,74,105,0.7);
+            background-color: rgba(230, 74, 105, 0.389);
         }
         &.logout{
             padding: 10px;
             background-color: #1a73e8;
+
+            &:hover{
+                background-color: #1a73e851;
+            }
         }
     }
 }
