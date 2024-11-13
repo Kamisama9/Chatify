@@ -8,9 +8,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/Firebase";
 import { useUserStore } from "./store/UserStore";
 import ClipLoader from "react-spinners/ClipLoader";
+import { useChatStore } from "./store/ChatStore";
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();
+  const {chatId}=useChatStore()
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
@@ -43,8 +45,8 @@ const App = () => {
       {currentUser ? (
         <>
           <Lists />
-          <Chat />
-          <Details />
+          {chatId && <Chat />}
+          {chatId && <Details />}
         </>
       ) : (
         <Login />
