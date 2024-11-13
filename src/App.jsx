@@ -28,7 +28,6 @@ const App = () => {
     };
   }, [fetchUserInfo]);
 
-  console.log(currentUser);
 
   if (isLoading)
     return (
